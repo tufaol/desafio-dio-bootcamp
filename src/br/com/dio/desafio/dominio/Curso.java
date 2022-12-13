@@ -1,28 +1,15 @@
 package br.com.dio.desafio.dominio;
 
-public class Curso {
-    private String tiulo;
-    private String descricao;
+public class Curso extends Conteudo {
     private int cargaHoraria;
+
+    @Override
+    public double calcularXP() {
+        return XP_PADRAO * getCargaHoraria();
+    }
 
     public Curso() {
 
-    }
-
-    public String getTiulo() {
-        return tiulo;
-    }
-
-    public void setTiulo(String tiulo) {
-        this.tiulo = tiulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public int getCargaHoraria() {
@@ -36,8 +23,8 @@ public class Curso {
     @Override
     public String toString() {
         return "Curso{" +
-                "tiulo='" + tiulo + '\'' +
-                ", descricao='" + descricao + '\'' +
+                "tiulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
                 ", cargaHoraria=" + cargaHoraria +
                 '}';
     }
